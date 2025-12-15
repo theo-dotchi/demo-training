@@ -229,14 +229,11 @@ Use the Azure Static Web Apps Marketplace workflow for a pre-configured deployme
    - Click **Merge pull request** on GitHub
    - Confirm merge
 
-2. **Set up the Azure deployment token in GitHub Secrets:**
-   - Go to your Azure Static Web App in the Azure Portal
-   - Click **Manage deployment token** and copy the token
-   - In GitHub repo: **Settings** → **Secrets and variables** → **Actions**
-   - Click **New repository secret**
-   - Name: `AZURE_STATIC_WEB_APPS_API_TOKEN`
-   - Paste the Azure deployment token
-   - Click **Add secret**
+2. **Check existing Azure secret:**
+   - Go to **Settings** → **Secrets and variables** → **Actions**
+   - You should see a secret like `AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_PEBBLE_054BD1210`
+   - This was automatically created when Azure Static Web App was set up
+   - Copy the exact secret name (you'll need it in step 6)
 
 3. Go to **Actions** → **New workflow**
 
@@ -244,9 +241,13 @@ Use the Azure Static Web Apps Marketplace workflow for a pre-configured deployme
 
 5. Find **"Deploy web app to Azure Static Web Apps"** (by Microsoft Azure) and click **Configure**
 
-6. The workflow template auto-generates. **Before committing, update these environment variables:**
+6. The workflow template auto-generates. **Before committing, update these values:**
    - Change `APP_ARTIFACT_LOCATION: "build"` to `"dist"` (Vite uses `dist` folder)
    - Optionally remove `API_LOCATION: "api"` line (we don't have an API)
+   - Update `AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}` to use your actual secret name:
+     ```yaml
+     AZURE_STATIC_WEB_APPS_API_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_PEBBLE_054BD1210 }}
+     ```
 
 7. Commit the workflow with the message: `"ci: add Azure Static Web Apps deployment"`
 
