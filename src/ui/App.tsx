@@ -38,9 +38,9 @@ export function App() {
       </section>
 
       <section className="celebration">
-        <span className="fireworks">🎆✨🎇</span>
+        <span className="fireworks">✨</span>
         <h2>Congrats, we automatically tested and deployed our app on Azure !</h2>
-        <span className="fireworks">🎇✨🎆</span>
+        <span className="fireworks">✨</span>
       </section>
 
       <footer>
