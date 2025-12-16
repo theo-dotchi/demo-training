@@ -6,8 +6,8 @@ export function App() {
     { label: 'Add Dependency Review (Marketplace)', done: false },
     { label: 'Open PR to trigger checks', done: false },
     { label: 'Debug + rerun workflow', done: false },
+    { label: '(Bonus) Add Azure deployment workflow', done: false },
     { label: '(Bonus) Push and watch automation', done: false },
-    { label: 'Push and watch automation', done: false },
   ]);
 
   const toggle = (idx: number) => {
