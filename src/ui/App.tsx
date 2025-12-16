@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 export function App() {
   const [steps, setSteps] = useState([
-    { label: 'Create CI workflow (tests)', done: false },
-    { label: 'Add Dependency Review action', done: false },
-    { label: 'Push code to trigger workflows', done: false },
-    { label: 'Inspect Actions logs and debug', done: false },
-    { label: 'Add Azure deployment workflow', done: false },
-    { label: 'Push again and observe automation', done: false },
+    { label: 'Add test workflow (manual)', done: false },
+    { label: 'Add Dependency Review (Marketplace)', done: false },
+    { label: 'Open PR to trigger checks', done: false },
+    { label: 'Debug + rerun workflow', done: false },
+    { label: '(Bonus) Deploy to Azure', done: false },
+    { label: 'Push and watch automation', done: false },
   ]);
 
   const toggle = (idx: number) => {
@@ -39,7 +39,7 @@ export function App() {
 
       <section className="celebration">
         <span className="fireworks">✨</span>
-        <h2>Congrats, we automatically tested and deployed our app on Azure !</h2>
+        <h2>All checks passed — your app is live on Azure.</h2>
         <span className="fireworks">✨</span>
       </section>
 
