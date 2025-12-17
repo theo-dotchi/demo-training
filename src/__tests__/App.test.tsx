@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { App } from '../ui/App';
+import App from '../ui/App';
 
 describe('App', () => {
   it('renders title and checklist', () => {
     render(<App />);
-    expect(screen.getByText('GitHub Actions Live Demo')).toBeInTheDocument();
+    expect(screen.getByText('GitHub Actions Demo')).toBeInTheDocument();
     expect(screen.getByText('Add test workflow (manual)')).toBeInTheDocument();
   });
 
